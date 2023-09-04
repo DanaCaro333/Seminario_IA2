@@ -32,27 +32,41 @@ def draw_perceptron(model):
     w1,w2,b = model.w[0], model.w[1], model.b
     plt.plot([-2,2], [(1/w2)*(-w1*(-2)-b), (1/w2)*(-w1*(2)-b)])
 
-def carga(archivo,X,Y):
-    X1 = np.array([])
-    X2 = np.array([])
-    with open(archivo, "r") as arc:
-        for line in arc.readlines():
-            data = line.split(",")
-            X1 = np.append(X1,float(data[0]))
-            X2 = np.append(X2,float(data[1]))
-            if int(data[2]) < 0:
-                Y = np.append(Y,0)
-            else:
-                Y = np.append(Y,int(data[2]))
-    X = np.array([X1,X2])   
-
+X1 = np.array([])
+X2 = np.array([])
 Y = np.array([])
 X = np.array([[],[]])
 
-carga("./info/XOR_tst.csv",X,Y)    
+with open("./info/OR_trn.csv", "r") as arc:
+    for line in arc.readlines():
+        data = line.split(",")
+        X1 = np.append(X1,float(data[0]))
+        X2 = np.append(X2,float(data[1]))
+        if int(data[2]) < 0:
+            Y = np.append(Y,0)
+        else:
+            Y = np.append(Y,int(data[2]))
+X = np.array([X1,X2])   
 
 model = perceptron(2, 0.5)
 model.fit(X, Y)
+
+X1 = np.array([])
+X2 = np.array([])
+Y = np.array([])
+X = np.array([[],[]])
+
+with open("./info/OR_tst.csv", "r") as arc:
+    for line in arc.readlines():
+        data = line.split(",")
+        X1 = np.append(X1,float(data[0]))
+        X2 = np.append(X2,float(data[1]))
+        if int(data[2]) < 0:
+            Y = np.append(Y,0)
+        else:
+            Y = np.append(Y,int(data[2]))
+X = np.array([X1,X2])   
+
 print(model.predict(X))
 
 #Dibujo
