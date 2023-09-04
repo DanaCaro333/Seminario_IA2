@@ -86,5 +86,3 @@ plt.ylabel(r'$x_2$')
 draw_perceptron(model)
 plt.show()
 
-#Altura 1.2 - 2.2
-#Peso 40 - 180
