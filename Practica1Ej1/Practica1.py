@@ -37,7 +37,7 @@ X2 = np.array([])
 Y = np.array([])
 X = np.array([[],[]])
 
-with open("./info/OR_trn.csv", "r") as arc:
+with open("./info/XOR_trn.csv", "r") as arc:
     for line in arc.readlines():
         data = line.split(",")
         X1 = np.append(X1,float(data[0]))
@@ -56,7 +56,7 @@ X2 = np.array([])
 Y = np.array([])
 X = np.array([[],[]])
 
-with open("./info/OR_tst.csv", "r") as arc:
+with open("./info/XOR_tst.csv", "r") as arc:
     for line in arc.readlines():
         data = line.split(",")
         X1 = np.append(X1,float(data[0]))
