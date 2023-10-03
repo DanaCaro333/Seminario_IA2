@@ -13,7 +13,7 @@ from numpy import linspace
 import math
 
 # Ejemplo del gradiente descendente aplicado a la función y = 10 - math.exp(-(x_1**2 + 3*x_2**2))
-# La ecuación matemática para el gradiente (derivada) es = 2*x
+# La ecuación matemática para el gradiente (derivada) es = math.exp(-x_1-3*x_2)
 
 x_inicial = randint(10) 
 alpha = 0.1
@@ -27,8 +27,8 @@ x_1 = x_inicial
 for i in range(n_iteraciones):
 	print('------------------------')
 	print('iteración ', str(i+1))
+    x_2 = x_1
     
-    x2 = x1
 	# Calcular gradiente
 	gradiente = math.exp(-x_1-3*x_2)
 
