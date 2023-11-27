@@ -30,7 +30,7 @@ class Clasificadores:
 
         accuracy = accuracy_score(y_test, y_pred)
         report = classification_report(y_test, y_pred)
-
+ 
         # Resultados en Diagrama
         print("---------Resultados de Regresión logistica---------")
         if self.tipo == 1:
